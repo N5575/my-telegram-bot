@@ -2,7 +2,7 @@ import asyncio
 import os
 from aiogram import Bot, Dispatcher, types
 from aiogram.filters import Command
-from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardRemove
+from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardRemove, InlineKeyboardMarkup, InlineKeyboardButton
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -20,9 +20,24 @@ kb_main = ReplyKeyboardMarkup(
     resize_keyboard=True
 )
 
+kb_catalog = InlineKeyboardMarkup(
+    inline_keyboard=[
+        [InlineKeyboardButton(text="📝 Оставить заявку", callback_data="request_consultation")]
+    ]
+)
+
 @dp.message(Command("start"))
 async def cmd_start(message: types.Message):
     await message.answer("Привет! Выберите действие:", reply_markup=kb_main)
+
+@dp.callback_query()
+async def handle_callback(callback: types.CallbackQuery):
+    if callback.data == "request_consultation":
+        await callback.message.answer(
+            "Отлично! Напишите в одном сообщении:\n👤 Имя\n📱 Телефон или @telegram\n💬 Кратко, по какому вопросу нужна консультация",
+            reply_markup=ReplyKeyboardRemove()
+        )
+        await callback.answer()
 
 @dp.message()
 async def handle_all(message: types.Message):
@@ -41,9 +56,11 @@ async def handle_all(message: types.Message):
             "🔹 Серия PROFESSIONAL:\n"
             "• Летные костюмы\n"
             "• Комбинезоны\n\n"
-            "📝 Оставьте заявку, мы оповестим, когда продукция будет готова к предзаказу."
+            "📝 Нажмите кнопку ниже, чтобы оставить заявку на предзаказ."
         )
-        await message.answer(catalog, reply_markup=kb_main)
+        await message.answer(catalog, reply_markup=kb_main, parse_mode="HTML")
+        # Отправляем кнопку отдельно, чтобы она точно отобразилась
+        await message.answer("👇 Быстрая заявка:", reply_markup=kb_catalog)
     elif message.text == "📖 О бренде":
         await message.answer(
             "📖 О бренде 55.75°:\n\n"
