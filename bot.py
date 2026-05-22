@@ -2,7 +2,7 @@ import asyncio
 import os
 from aiogram import Bot, Dispatcher, types
 from aiogram.filters import Command
-from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardRemove
+from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMarkup, InlineKeyboardButton
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -56,7 +56,7 @@ async def handle_callback(callback: types.CallbackQuery):
     elif callback.data == "request_consultation":
         await callback.message.answer(
             "Отлично! Напишите в одном сообщении:\n👤 Имя\n📱 Телефон или @telegram\n💬 Кратко, по какому вопросу нужна консультация",
-            reply_markup=ReplyKeyboardRemove()
+            reply_markup=kb_back
         )
         await callback.answer()
 
