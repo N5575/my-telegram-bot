@@ -2,7 +2,7 @@ import asyncio
 import os
 from aiogram import Bot, Dispatcher, types
 from aiogram.filters import Command
-from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardRemove, InlineKeyboardMarkup, InlineKeyboardButton
+from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardRemove
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -27,6 +27,13 @@ kb_back = InlineKeyboardMarkup(
     ]
 )
 
+kb_bonus = InlineKeyboardMarkup(
+    inline_keyboard=[
+        [InlineKeyboardButton(text="📝 Оставить заявку", callback_data="request_consultation")],
+        [InlineKeyboardButton(text="🔙 Вернуться в главное меню", callback_data="go_to_main")]
+    ]
+)
+
 @dp.message(Command("start"))
 async def cmd_start(message: types.Message):
     await message.answer(
@@ -46,13 +53,19 @@ async def handle_callback(callback: types.CallbackQuery):
             reply_markup=kb_main
         )
         await callback.answer()
+    elif callback.data == "request_consultation":
+        await callback.message.answer(
+            "Отлично! Напишите в одном сообщении:\n👤 Имя\n📱 Телефон или @telegram\n💬 Кратко, по какому вопросу нужна консультация",
+            reply_markup=ReplyKeyboardRemove()
+        )
+        await callback.answer()
 
 @dp.message()
 async def handle_all(message: types.Message):
     if message.text == "📩 Связаться с нами":
         await message.answer(
             "Отлично! Напишите в одном сообщении:\n👤 Имя\n📱 Телефон или @telegram\n💬 Кратко, по какому вопросу нужна консультация",
-            reply_markup=ReplyKeyboardRemove()
+            reply_markup=kb_back
         )
     elif message.text == "📖 О бренде":
         text = (
@@ -62,9 +75,7 @@ async def handle_all(message: types.Message):
             "Почему широта, а не долгота?\n"
             "Потому что широта диктует климат. А климат диктует стиль жизни. Мы создаем одежду для тех, кто понимает ценность тепла в условиях холода и ценность свободы на просторах территории.\n\n"
             "Наш бренд создан для людей, влюбленных в небо. Наша миссия — сделать профессиональную одежду для полетов максимально комфортной, а эстетику профессиональной экипировки перенести в повседневную жизнь.\n\n"
-            'Наша одежда создана <a href="https://t.me/nezhdana_jet">пилотом</a> и для пилотов. Мы производим одежду в России и для России.\n\n'
-            "Каталог коллекции будет опубликован в ближайшее время.\n\n"
-            "Отправьте заявку, мы сообщим вам стоимость понравившейся вещи и сроки изготовления."
+            'Наша одежда создана <a href="https://t.me/nezhdana_jet">пилотом</a> и для пилотов. Мы производим одежду в России и для России.'
         )
         await message.answer(text, reply_markup=kb_back, parse_mode="HTML")
     elif message.text == "👗 Коллекция":
@@ -76,7 +87,9 @@ async def handle_all(message: types.Message):
             "Элементы коллекции легко комбинируются между собой и подобраны таким образом, чтобы из них можно было собрать образ под любую задачу.\n\n"
             "Нашим главным приоритетом является качество и внимание к деталям. Мы используем только натуральные ткани, и ткани с пропитками, если это диктует функционал вещи.\n"
             "Тщательнейшим образом отбираем фурнитуру. Используем инновационные технологии нанесения принтов.\n\n"
-            "Наша задача - чтобы вещи бренда служили долго и безотказно, выделяли владельца из толпы и создавали комфорт в полетах и повседневной жизни."
+            "Наша задача - чтобы вещи бренда служили долго и безотказно, выделяли владельца из толпы и создавали комфорт в полетах и повседневной жизни.\n\n"
+            "Каталог коллекции будет опубликован в ближайшее время.\n\n"
+            "Отправьте заявку, мы сообщим вам стоимость понравившейся вещи и сроки изготовления."
         )
         await message.answer(text, reply_markup=kb_back)
     elif message.text == "🪽 Бонус Крылья Спутника":
@@ -89,7 +102,7 @@ async def handle_all(message: types.Message):
             "Чтобы воспользоваться скидкой, отправьте заявку, мы сообщим вам стоимость понравившейся вещи и сроки изготовления.\n\n"
             "Если у вас возникнут вопросы или потребуется помощь, пожалуйста, свяжитесь с нами через этот чат."
         )
-        await message.answer(text, reply_markup=kb_back)
+        await message.answer(text, reply_markup=kb_bonus)
     else:
         await message.answer(f"✅ Заявка принята!\n\nМы получили:\n{message.text}\n\nСпециалист свяжется с вами в ближайшее время. Для возврата в меню нажмите /start", reply_markup=kb_main)
         try:
