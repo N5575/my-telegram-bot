@@ -34,6 +34,13 @@ kb_bonus = InlineKeyboardMarkup(
     ]
 )
 
+kb_collection = InlineKeyboardMarkup(
+    inline_keyboard=[
+        [InlineKeyboardButton(text="📝 Оставить заявку", callback_data="request_consultation")],
+        [InlineKeyboardButton(text="🔙 Вернуться в главное меню", callback_data="go_to_main")]
+    ]
+)
+
 @dp.message(Command("start"))
 async def cmd_start(message: types.Message):
     await message.answer(
@@ -88,10 +95,9 @@ async def handle_all(message: types.Message):
             "Нашим главным приоритетом является качество и внимание к деталям. Мы используем только натуральные ткани, и ткани с пропитками, если это диктует функционал вещи.\n"
             "Тщательнейшим образом отбираем фурнитуру. Используем инновационные технологии нанесения принтов.\n\n"
             "Наша задача - чтобы вещи бренда служили долго и безотказно, выделяли владельца из толпы и создавали комфорт в полетах и повседневной жизни.\n\n"
-            "Каталог коллекции будет опубликован в ближайшее время.\n\n"
-            "Отправьте заявку, мы сообщим вам стоимость понравившейся вещи и сроки изготовления."
+            "Вы можете оставить заявку и мы расскажем вам о коллекции подробнее"
         )
-        await message.answer(text, reply_markup=kb_back)
+        await message.answer(text, reply_markup=kb_collection)
     elif message.text == "🪽 Бонус Крылья Спутника":
         text = (
             "🪽 Бонус:\n\n"
