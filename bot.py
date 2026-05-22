@@ -104,7 +104,10 @@ async def handle_all(message: types.Message):
         )
         await message.answer(text, reply_markup=kb_bonus)
     else:
-        await message.answer(f"✅ Заявка принята!\n\nМы получили:\n{message.text}\n\nСпециалист свяжется с вами в ближайшее время. Для возврата в меню нажмите /start", reply_markup=kb_main)
+        await message.answer(
+            f"✅ Заявка принята!\n\nМы получили:\n{message.text}\n\nСпециалист свяжется с вами в ближайшее время.",
+            reply_markup=kb_back
+        )
         try:
             await bot.send_message(
                 ADMIN_ID,
