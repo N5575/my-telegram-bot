@@ -1,0 +1,428 @@
+{
+  "categories": {
+    "professional": {
+      "name": "👨‍✈️ Professional",
+      "items": {
+        "RA0001": {
+          "name": "Лётный костюм «Навигатор»",
+          "has_prints": false,
+          "variants": {
+            "RA0001002G": {
+              "color": "Бежевый",
+              "photos": {
+                "main": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781554056/RA0001002G_pbtwz8.png"
+              }
+            },
+            "RA00010800G": {
+              "color": "Синий с белым",
+              "photos": {
+                "main": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781554224/RA00010800G_r8iz0e.png"
+              }
+            }
+          },
+          "price": 47800,
+          "description": "Лётный костюм Навигатор выполнен из износостойкой ткани, рассчитанной на активную эксплуатацию и длительное ношение. Модель оснащена удобными нагрудными карманами на молнии, ответными частями для шевронов, карманами на брюках, держателями для планшета. Регулируемая вентиляционная система обеспечивает дополнительный комфорт в разных условиях. Практичный, надёжный и продуманный костюм для профессионального использования."
+        },
+        "RA0002": {
+          "name": "Лётный костюм «Навигатор-Спорт»",
+          "has_prints": false,
+          "variants": {
+            "RA0002002G": {
+              "color": "Бежевый",
+              "photos": {
+                "main": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781554307/RA0002002G_hygzyp.png"
+              }
+            },
+            "RA000208G": {
+              "color": "Синий",
+              "photos": {
+                "main": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781554459/RA000208G_fv5nih.png"
+              }
+            },
+            "RA000204G": {
+              "color": "Оливковый",
+              "photos": {
+                "main": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781554393/RA000204G_el6vd2.png"
+              }
+            }
+          },
+          "price": 45800,
+          "description": "Лётный костюм Навигатор Спорт - очень легкий лётный костюм с большим количеством вентиляционных клапанов для пилотов - спортсменов. Трикотажные манжеты в тон ткани, удобные врезные карманы на куртке и на брюках. Эргономичный крой, хорошая вентиляция и свобода движений. Авиационные карманы, прозрачный съемный карман для карт и схем. В модели предусмотрено множество удобных карманов и ответная часть для именника. Специальная износостойкая ткань, уникальная вентиляционная система, разработанная с учетом пожеланий пилотов. Брюки с эластичным поясом обеспечивают комфортное пребывание в сидячем положении."
+        }
+      },
+      "description": "Лётные костюмы серии Professional - прямое наследие проверенных временем решений, доработанных по крою, тканям и фурнитуре для максимального комфорта в кабине экипажа."
+    },
+    "pro_fashion": {
+      "name": "🔥 Pro Fashion",
+      "subcategories": {
+        "hoodies": {
+          "name": "🧥 Толстовки",
+          "items": {
+            "RA1001": {
+              "name": "Толстовка с капюшоном",
+              "has_prints": false,
+              "variants": {
+                "RA100109G": {
+                  "color": "Серый",
+                  "photos": {
+                    "front02": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781554836/RA100109G_front02_pbz8ao.png",
+                    "front01": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781554832/RA100109G-front01_p7n6ce.png",
+                    "full": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781554820/RA100109G_full_rczdrk.png",
+                    "logo": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781554838/RA100109G-logo_b7q1mx.png",
+                    "patch": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781554833/RA100109G-patch%D1%81_vz8hb5.png"
+                  }
+                },
+                "RA100108G": {
+                  "color": "Синий",
+                  "photos": {
+                    "front": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781555115/RA100108G_front_gdbml7.png",
+                    "full": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781555125/RA100108G_full_jtiwgc.png",
+                    "photo1": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781555986/O70A1248_rngrxa.jpg",
+                    "photo2": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781555963/O70A1269_gg4wvo.jpg",
+                    "photo3": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781555995/O70A1244_ci29nd.jpg"
+                  }
+                }
+              },
+              "price": 16700,
+              "description": "Толстовки с капюшоном — базовые модели линейки Pro Fashion. Лёгкие, функциональные, с авиационной символикой. Идеальны как в полёте, так и в городе. Идеально сочетаются со штанами серии RA2001G.",
+              "composition": "футер с начёсом, 80% хлопок, 20% полиэстер"
+            },
+            "RA1002": {
+              "name": "Толстовка с подкладом",
+              "has_prints": true,
+              "prints": [
+                "Kobra",
+                "AN2",
+                "MiG29",
+                "L29",
+                "R4466",
+                "L65",
+                "Cessna",
+                "Piper",
+                "Chakra",
+                "SU35",
+                "Borey"
+              ],
+              "variants": {
+                "RA100209G": {
+                  "color": "Серый",
+                  "photos": {
+                    "front": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781556556/RA100209G_front_japqil.png",
+                    "inside": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781556589/RA100209G_in_t2bsze.png",
+                    "Kobra": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781557326/RA100209G-Kobra_hckjnb.png",
+                    "SU35": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781556586/RA100209G-SU35_rpcblh.png",
+                    "L65": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781556584/RA100209G-L65_th3cym.png",
+                    "R4466": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781556581/RA100209G-R4466_llzgah.png",
+                    "Piper": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781556580/RA100209G-Piper_vkebk4.png",
+                    "MiG29": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781556578/RA100209G-MiG29_ygeois.png",
+                    "L29": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781556574/RA100209G-L29_ecqpla.png",
+                    "Chakra": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781556567/RA100209G-Chakra_fuupua.png",
+                    "Cessna": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781556565/RA100209G-Cessna_lvxdm9.png",
+                    "Borey": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781556559/RA100209G-Borey_ybhofk.png",
+                    "AN2": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781556558/RA100209G-AN2_xt4otf.png"
+                  }
+                },
+                "RA100208G": {
+                  "color": "Синий",
+                  "photos": {
+                    "front": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781557847/RA100208G_front_ja6ljx.png",
+                    "inside": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781557868/RA100208G_-inside_bqreeq.png",
+                    "Chakra": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781557842/RA100208G_-_Chakra_lcmyvx.png",
+                    "R4466": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781557823/RA100208G_-_R4466_vnbobg.png",
+                    "MiG29": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781557823/RA100209G_-_MiG29_ftvhgt.png",
+                    "SU35": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781557820/RA100208G_-_SU35_hbvi6j.png",
+                    "Piper": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781557817/RA100208G_-_Piper_t9fmmr.png",
+                    "L65": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781557810/RA100208G_-_L65_re2pkg.png",
+                    "L29": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781557810/RA100208G_-_L29_d9puld.png",
+                    "Borey": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781557710/RA100208G_-_Borey_xuln0j.png",
+                    "Kobra": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781557709/RA100208G_-_Kobra_hvrekk.png",
+                    "Cessna": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781557709/RA100208G_-_Cessna_vw5hdc.png",
+                    "AN2": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781557625/RA100208G_-_AN2_l2my4m.png"
+                  }
+                }
+              },
+              "price": 23700,
+              "description": "Утеплённые модели с подкладом — для холодных дней на перроне и в городе. Сохраняют тепло, не теряя стиля. На подкладе - стилизованное изображение с картой московского авиационного узла. На груди - вышивка с логотипом бренда. Шевроны - на выбор. На спине стильный принт в сочетании с вышивкой. Два цветовых решения. 11 оригинальных принтов.",
+              "composition": "футер с начёсом, 80% хлопок, 20% полиэстер"
+            },
+            "RA1003": {
+              "name": "Толстовка с начёсом и стойкой",
+              "has_prints": true,
+              "prints": [
+                "Kobra",
+                "AN2",
+                "MiG29",
+                "L29",
+                "R4466",
+                "L65",
+                "Cessna",
+                "Piper",
+                "Chakra",
+                "SU35",
+                "Borey"
+              ],
+              "variants": {
+                "RA100309G": {
+                  "color": "Серый",
+                  "photos": {
+                    "front": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781633234/RA100309G_Front_wqk0tc.png",
+                    "inside": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781634311/RA100309G_inside_hrgwpn.png",
+                    "Kobra": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781598375/RA100309G_Kobra_ynz8xw.png",
+                    "Borey": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781598375/RA100309G_Borey_yz8xw.png",
+                    "L65": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781631436/RA100309G_L65_athiso.png",
+                    "SU35": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781631574/RA100309G_SU35_ibzv8b.png",
+                    "MiG29": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781631586/RA100309G_MiG29_ginj7v.png",
+                    "L29": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781631429/RA100309G_L29_hxgxue.png",
+                    "Chakra": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781631423/RA100309G_Chakra_ththre.png",
+                    "Cessna": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781631417/RA100309G_Cessna_fp4pou.png",
+                    "AN2": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781631413/RA100309G_AN2_t7bi8i.png",
+                    "Piper": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781631409/RA100309G_Piper_h4qlrz.png",
+                    "R4466": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781632952/RA100309G_R4466_bvsdba.png"
+                  }
+                },
+                "RA100308G": {
+                  "color": "Синий",
+                  "photos": {
+                    "front": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781598375/RA100308G_Front_wqk0tc.png",
+                    "inside": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781633442/RA100308G_inside_tlj1bo.jpg",
+                    "Kobra": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781598375/RA100308G_Kobra_ynz8xw.png",
+                    "AN2": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781598375/RA100308G_AN2_rumsyg.png",
+                    "MiG29": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781598379/RA100308G_MiG29_pzbox1.png",
+                    "L29": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781599329/RA100308G_L29_w3dxov.png",
+                    "R4466": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781600613/RA100308G_R4466_dbzdsw.png",
+                    "L65": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781600611/RA100308G_L65_hmqlbg.png",
+                    "Cessna": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781600926/RA100308G_Cessna_kq1mqa.png",
+                    "Piper": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781629040/RA100308G_Piper_ppudee.png",
+                    "Chakra": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781629121/RA100308G_Chakra_hxpfqn.png",
+                    "SU35": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781629584/RA100308G_SU35_fibpe7.png",
+                    "Borey": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781632603/RA100308G_Borey_f74w20.png"
+                  }
+                }
+              },
+              "price": 19900,
+              "description": "Модели с начёсом и воротником-стойкой — максимальный комфорт и защита шеи. Строгий силуэт, профессиональный вид. Отделка жаккардовой лентой с авиационной символикой. На груди - вышивка с логотипом бренда. Шевроны на выбор. 11 оригинальных принтов в сочетании с вышивкой.",
+              "composition": "футер с начёсом, 80% хлопок, 20% полиэстер"
+            }
+          }
+        },
+        "pants": {
+          "name": "👖 Штаны и брюки",
+          "items": {
+            "RA2001": {
+              "name": "Спортивные штаны",
+              "has_prints": false,
+              "variants": {
+                "RA200109G": {
+                  "color": "Серый",
+                  "photos": {
+                    "main": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781597129/%D0%A8%D1%82%D0%B0%D0%BD%D1%8B_%D1%81%D0%BF%D0%BE%D1%80%D1%82_%D1%81%D0%B5%D1%80%D1%8B%D0%B5_RA200109G_h3m7mn.png"
+                  }
+                },
+                "RA200108G": {
+                  "color": "Синий",
+                  "photos": {
+                    "main": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781596646/RA200108G_dvriee.png"
+                  }
+                }
+              },
+              "price": 10900,
+              "description": "Свободный крой, полиуретановая нашивка с логотипом, пояс — мягкая широкая резинка со шнуром.",
+              "composition": "лёгкий футер трёхнитка, 80% хлопок, 20% полиэстер"
+            },
+            "RA2002": {
+              "name": "Спортивные штаны с начёсом",
+              "has_prints": false,
+              "cross_sell": true,
+              "variants": {
+                "RA200209G": {
+                  "color": "Серый",
+                  "photos": {
+                    "main": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781716314/RA200209G_z0qufc.png",
+                    "variant": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781718123/RA200209G_01_pwgbkp.png"
+                  }
+                },
+                "RA200208G": {
+                  "color": "Синий",
+                  "photos": {
+                    "main": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781716555/RA200208G_juhz19.png",
+                    "variant": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781717696/RA200208G_01_zhlxbl.png"
+                  }
+                }
+              },
+              "price": 10900,
+              "description": "Свободный крой, полиуретановая нашивка с логотипом, пояс — мягкая широкая резинка со шнуром.",
+              "composition": "тёплый футер с начёсом, 80% хлопок, 20% полиэстер"
+            },
+            "RA2003": {
+              "name": "Джоггеры",
+              "has_prints": false,
+              "variants": {
+                "RA200301G": {
+                  "color": "Чёрный",
+                  "photos": {
+                    "main": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781558752/RA200301G_ripgdi.png"
+                  }
+                },
+                "RA200309G": {
+                  "color": "Синий",
+                  "photos": {
+                    "main": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781558711/RA200309G_epel6y.png"
+                  }
+                },
+                "RA2003002G": {
+                  "color": "Бежевый",
+                  "photos": {
+                    "main": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781558677/RA2003002G_mjsg4n.png"
+                  }
+                }
+              },
+              "price": 14400,
+              "description": "Современный силуэт с зауженным низом на резинке. Универсальная модель для города и путешествий. Из дышащей смесовой ткани с пропиткой, используемой в серии Professional.",
+              "composition": "70% хлопок, 30% нейлон с PU пропиткой"
+            },
+            "RA2004": {
+              "name": "Брюки карго",
+              "has_prints": false,
+              "variants": {
+                "RA200408G": {
+                  "color": "Синий",
+                  "photos": {
+                    "main": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781559192/RA200408G_rhtwa9.png"
+                  }
+                },
+                "RA200409G": {
+                  "color": "Серый",
+                  "photos": {
+                    "main": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781559074/RA200409G_mj95od.png"
+                  }
+                },
+                "RA200404G": {
+                  "color": "Хаки",
+                  "photos": {
+                    "main": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781559051/RA200404G_binzom.png"
+                  }
+                }
+              },
+              "price": 21900,
+              "description": "Функциональная модель с накладными карманами на кнопках. Вдохновлены лётным снаряжением, адаптированы для города. Водо- и грязеотталкивающие свойства.",
+              "composition": "98% хлопок, 2% спандекс с тефлоновым покрытием"
+            }
+          }
+        },
+        "tshirts": {
+          "name": "👕 Футболки и Поло",
+          "items": {
+            "RA3001": {
+              "name": "Футболки с принтом",
+              "has_prints": true,
+              "prints": [
+                "Kobra",
+                "AN2",
+                "MiG29",
+                "L29",
+                "R4466",
+                "L65",
+                "Cessna",
+                "Piper",
+                "Chakra",
+                "SU35",
+                "Borey"
+              ],
+              "variants": {
+                "RA300100G": {
+                  "color": "Молочный",
+                  "photos": {
+                    "front": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781641996/RA300100G_Front_qbyega.png",
+                    "AN2": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781637384/RA300100G_AN2_ax0ki3.png",
+                    "SU35": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781641731/RA300100G_SU35_zj5edz.png",
+                    "R4466": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781641790/RA300100G_R4466png_l8x1cc.png",
+                    "Piper": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781641783/RA300100G_Piper_odcnik.png",
+                    "MiG29": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781641776/RA300100G_MiG29_ksrymj.png",
+                    "L65": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781641769/RA300100G_L65_a4hemx.png",
+                    "L29": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781641762/RA300100G_L29_k87pur.png",
+                    "Kobra": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781641755/RA300100G_Kobra_gsrulp.png",
+                    "Chakra": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781641748/RA300100G_Chakra_vbzzyr.png",
+                    "Cessna": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781641741/RA300100G_Cessna_odwbbx.png",
+                    "Borey": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781641733/RA300100G_Borey_mn8tcr.png"
+                  }
+                },
+                "RA300109G": {
+                  "color": "Серый",
+                  "photos": {
+                    "front": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781693479/RA300109G_Front_c4zndw.png",
+                    "L65": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781693272/RA300109G_L65_lljviv.png",
+                    "L29": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781693231/RA300109G_L29_boebq7.png",
+                    "R4466": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781693223/RA300109G_R4466_qxtcdd.png",
+                    "Piper": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781693217/RA300109G_Piper_mshc8x.png",
+                    "MiG29": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781694056/RA300109G_MiG29_dnectj.png",
+                    "SU35": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781713575/RA300109G_SU35_m7grwb.png",
+                    "Kobra": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781713567/RA300109G_Kobra_fvwbuu.png",
+                    "Chakra": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781713501/RA300109G_Chakra_lc8q5d.png",
+                    "Cessna": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781713492/RA300109G_Cessna_x7qvgd.png",
+                    "Borey": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781713483/RA300109G_Borey_cozsaj.png",
+                    "AN2": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781713475/RA300109G_AN2_ekmffu.png"
+                  }
+                },
+                "RA300108G": {
+                  "color": "Синий",
+                  "photos": {
+                    "front": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781713880/RA300108G_ghx9hx.png",
+                    "Kobra": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781713736/RA300108G_Kobra_edf23i.png",
+                    "L29": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781713779/RA300108G_L29_ejvxu9.png",
+                    "L65": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781713790/RA300108G_L65_qoeslq.png",
+                    "MiG29": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781713801/RA300108G_MiG29_qc1csv.png",
+                    "Piper": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781713809/RA300108G_Piper_psfz6w.png",
+                    "R4466": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781713822/RA300108G_R4466_qceeab.png",
+                    "SU35": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781713830/RA300108G_SU35_v3ioud.png",
+                    "AN2": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781713841/RA300108G_AN2_esvdvx.png",
+                    "Borey": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781713850/RA300108G_Borey_r78ajh.png",
+                    "Cessna": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781713859/RA300108G_Cessna_tzqlxz.png",
+                    "Chakra": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781713867/RA300108G_Chakra_b5ktpb.png"
+                  }
+                },
+                "RA3001012G": {
+                  "color": "Салатовый",
+                  "photos": {
+                    "front": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781643913/RA300112G_Front_j3zt0x.png",
+                    "logo": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781643932/RA300112G_logo_fc0o0l.png",
+                    "Kobra": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781643881/RA300112G_Kobra_v1p1kb.png",
+                    "Chakra": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781643871/RA300112G_Chakra_mklrbh.png",
+                    "Cessna": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781643840/RA300112G_Cessna_navifb.png"
+                  }
+                }
+              },
+              "price": 8100,
+              "description": "Качественные долговечные принты, авиационная символика. 11 оригинальных принтов.",
+              "composition": "95% хлопок, 5% лайкра",
+              "density": "210 г/м²"
+            },
+            "RA3002": {
+              "name": "Поло пике интерлок",
+              "has_prints": false,
+              "variants": {
+                "RA300200G": {
+                  "color": "Молочный",
+                  "photos": {
+                    "main": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781559409/RA300200G_tvt74a.png"
+                  }
+                },
+                "RA300208G": {
+                  "color": "Синий",
+                  "photos": {
+                    "main": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781559385/RA300208G_x3tqw4.png"
+                  }
+                }
+              },
+              "price": 9900,
+              "description": "Классическое поло из ткани пике интерлок — профессиональный вид, высокое качество материала, авиационная вышивка.",
+              "composition": "80% хлопок, 20% полиэстер",
+              "fabric": "интерлок пике двухсторонний",
+              "density": "340 г/м²"
+            }
+          }
+        }
+      },
+      "description": "Одежда, в которой комфортно и в полете, и в повседневной жизни. Принты, нашивки и шевроны - не просто декор, а визуальный маркер принадлежности к авиации."
+    }
+  }
+}
