@@ -288,6 +288,8 @@ async def item_handler(callback):
             )
         except Exception as error:
             print(f"Preview photos failed for {item_key}: {error}")
+            for photo_url in preview_photos:
+                await send_photo_safely(callback.message.chat.id, photo_url)
         await callback.message.answer(text, reply_markup=get_variant_buttons(item_key, item_data), parse_mode="HTML")
     else:
         await callback.message.edit_text(text, reply_markup=get_variant_buttons(item_key, item_data), parse_mode="HTML")
