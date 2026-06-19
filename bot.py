@@ -129,6 +129,9 @@ def get_subcategory_by_item(item_key):
             return subcat_key
     return None
 
+def telegram_photo_url(photo_url):
+    return photo_url.replace("/q_auto/f_auto/", "/q_auto/")
+
 def find_variant(article):
     """Ищет вариант товара по артикулу во всём каталоге"""
     # Сначала ищем точное совпадение (для товаров без принтов)
@@ -268,7 +271,7 @@ async def item_handler(callback):
         try:
             await bot.send_media_group(
                 chat_id=callback.message.chat.id,
-                media=[InputMediaPhoto(media=photo_url) for photo_url in preview_photos]
+                media=[InputMediaPhoto(media=telegram_photo_url(photo_url)) for photo_url in preview_photos]
             )
         except Exception as error:
             print(f"Preview photos failed for {item_key}: {error}")
@@ -402,9 +405,9 @@ async def show_item_by_article(callback: types.CallbackQuery, article: str):
     if photos:
         # Отправляем все фото БЕЗ кнопок, кроме последнего
         for photo_url in photos[:-1]:
-            await bot.send_photo(chat_id=chat_id, photo=photo_url)
+            await bot.send_photo(chat_id=chat_id, photo=telegram_photo_url(photo_url))
         # Последнее фото — с текстом и кнопками
-        await bot.send_photo(chat_id=chat_id, photo=photos[-1], caption=text, parse_mode="HTML", reply_markup=order_keyboard)
+        await bot.send_photo(chat_id=chat_id, photo=telegram_photo_url(photos[-1]), caption=text, parse_mode="HTML", reply_markup=order_keyboard)
     else:
         await callback.message.answer(text, parse_mode="HTML", reply_markup=order_keyboard)
 
