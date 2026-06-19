@@ -292,18 +292,25 @@ async def prints_handler(callback):
         await callback.answer("❌ Товар не найден", show_alert=True)
         return
 
-    await callback.message.edit_text(
-        f"🎨 <b>Выберите принт:</b>",
-        reply_markup=get_prints_menu(item_key, variant_key, item_data['prints']),
-        parse_mode="HTML"
-    )
+    try:
+        await callback.message.edit_text(
+            f"🎨 <b>Выберите принт:</b>",
+            reply_markup=get_prints_menu(item_key, variant_key, item_data['prints']),
+            parse_mode="HTML"
+        )
+    except Exception as error:
+        print(f"Prints menu edit failed for {variant_key}: {error}")
+        await callback.message.answer(
+            f"🎨 <b>Выберите принт:</b>",
+            reply_markup=get_prints_menu(item_key, variant_key, item_data['prints']),
+            parse_mode="HTML"
+        )
     await callback.answer()
 
 @dp.callback_query(F.data.startswith("variant_"))
 async def variant_back(callback):
-    parts = callback.data.split("_")
-    item_key = parts[1]
-    item_data, _, source, _ = find_variant(item_key)
+    item_key, variant_key = callback.data.replace("variant_", "", 1).rsplit("_", 1)
+    item_data, _, source, _ = find_variant(variant_key)
     if not item_data:
         await callback.answer("❌ Не найдено", show_alert=True)
         return
