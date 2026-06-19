@@ -196,7 +196,7 @@
                 "RA100309G": {
                   "color": "Серый",
                   "photos": {
-                    "front": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781633234/RA100309G_Front_wqk0tc.png",
+                    "front": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/v1781633234/RA100309G_Front_wqk0tc.png",
                     "inside": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781634311/RA100309G_inside_hrgwpn.png",
                     "Kobra": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781598375/RA100309G_Kobra_ynz8xw.png",
                     "Borey": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781598375/RA100309G_Borey_yz8xw.png",
@@ -221,7 +221,7 @@
                 "RA100308G": {
                   "color": "Синий",
                   "photos": {
-                    "front": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781594457/RA100308G_Front02_c8g9ug.png",
+                    "front": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/v1781594457/RA100308G_Front02_c8g9ug.png",
                     "inside": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781633442/RA100308G_inside_tlj1bo.jpg",
                     "Kobra": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781598375/RA100308G_Kobra_ynz8xw.png",
                     "AN2": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781598375/RA100308G_AN2_rumsyg.png",
@@ -248,8 +248,8 @@
               "description": "Модели с начёсом и воротником-стойкой — для прохладных дней, когда важны тепло, комфорт и аккуратный внешний вид. Воротник-стойка защищает шею от ветра и добавляет силуэту более строгий, профессиональный характер.\n\nТолстовка выполнена в авиационном стиле 55.75°: на груди — вышивка с логотипом бренда, шевроны можно выбрать отдельно. Отделка жаккардовой лентой с авиационной символикой подчёркивает характер модели и делает образ более собранным.",
               "composition": "футер с начёсом, 80% хлопок, 20% полиэстер",
               "preview_photos": [
-                "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781633234/RA100309G_Front_wqk0tc.png",
-                "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781594457/RA100308G_Front02_c8g9ug.png"
+                "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/v1781633234/RA100309G_Front_wqk0tc.png",
+                "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/v1781594457/RA100308G_Front02_c8g9ug.png"
               ]
             }
           }
