@@ -130,7 +130,20 @@ def get_subcategory_by_item(item_key):
     return None
 
 def telegram_photo_url(photo_url):
-    return photo_url.replace("/q_auto/f_auto/", "/q_auto/")
+    return (
+        photo_url
+        .replace("/q_auto/f_auto/", "/")
+        .replace("/f_auto/q_auto/", "/")
+        .replace("/f_auto/", "/")
+    )
+
+async def send_photo_safely(chat_id, photo_url, **kwargs):
+    try:
+        await bot.send_photo(chat_id=chat_id, photo=telegram_photo_url(photo_url), **kwargs)
+        return True
+    except Exception as error:
+        print(f"Photo send failed: {photo_url} | {error}")
+        return False
 
 def find_variant(article):
     """Ищет вариант товара по артикулу во всём каталоге"""
@@ -405,9 +418,17 @@ async def show_item_by_article(callback: types.CallbackQuery, article: str):
     if photos:
         # Отправляем все фото БЕЗ кнопок, кроме последнего
         for photo_url in photos[:-1]:
-            await bot.send_photo(chat_id=chat_id, photo=telegram_photo_url(photo_url))
+            await send_photo_safely(chat_id, photo_url)
         # Последнее фото — с текстом и кнопками
-        await bot.send_photo(chat_id=chat_id, photo=telegram_photo_url(photos[-1]), caption=text, parse_mode="HTML", reply_markup=order_keyboard)
+        sent = await send_photo_safely(
+            chat_id,
+            photos[-1],
+            caption=text,
+            parse_mode="HTML",
+            reply_markup=order_keyboard
+        )
+        if not sent:
+            await callback.message.answer(text, parse_mode="HTML", reply_markup=order_keyboard)
     else:
         await callback.message.answer(text, parse_mode="HTML", reply_markup=order_keyboard)
 
