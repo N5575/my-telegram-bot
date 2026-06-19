@@ -102,7 +102,7 @@ def get_variant_buttons(item_key, item_data, prefix="item"):
     for var_key, var_data in variants.items():
         color = var_data.get('color', '')
         if item_data.get('has_prints'):
-            builder.button(text=color, callback_data=f"prints_{prefix}_{item_key}_{var_key}")
+            builder.button(text=color, callback_data=f"prints:{item_key}:{var_key}")
         else:
             builder.button(text=color, callback_data=f"show_{var_key}")
     if prefix == "prof_item":
@@ -277,15 +277,19 @@ async def item_handler(callback):
         await callback.message.edit_text(text, reply_markup=get_variant_buttons(item_key, item_data), parse_mode="HTML")
     await callback.answer()
 
-@dp.callback_query(F.data.startswith("prints_"))
+@dp.callback_query(F.data.startswith("prints"))
 async def prints_handler(callback):
-    parts = callback.data.split("_")
-    if parts[1] == "item":
-        item_key = parts[2]
-        variant_key = parts[3]
+    print(f"Prints callback received: {callback.data}")
+    if callback.data.startswith("prints:"):
+        _, item_key, variant_key = callback.data.split(":", 2)
     else:
-        item_key = parts[3]
-        variant_key = parts[4]
+        parts = callback.data.split("_")
+        if parts[1] == "item":
+            item_key = parts[2]
+            variant_key = parts[3]
+        else:
+            item_key = parts[3]
+            variant_key = parts[4]
 
     item_data, _, _, _ = find_variant(variant_key)
     if not item_data:
