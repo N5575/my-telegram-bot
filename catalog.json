@@ -62,11 +62,19 @@
               "name": "Толстовка с капюшоном",
               "has_prints": false,
               "variants": {
-                "RA100109G": {
-                  "color": "Серый",
-                  "photos": {
+	                "RA100109G": {
+	                  "color": "Серый",
+		                  "description": "RA100109G - базовая модель с капюшоном темно-серого цвета. На рукаве - полиуретановая нашивка с изображением компаса, ярко-салатового цвета, на груди нашивка с логотипом. На капюшоне - ярко-салатовые шнурки с металлическими наконечниками. Идеально сочетаются со штанами RA200109G.",
+	                  "cross_sell": [
+	                    {
+	                      "text": "Штаны RA200109G",
+	                      "callback_data": "show_RA200109G"
+	                    }
+	                  ],
+	                  "photos": {
                     "front02": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781554836/RA100109G_front02_pbz8ao.png",
                     "front01": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781554832/RA100109G-front01_p7n6ce.png",
+                    "main": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781554832/RA100109G-front01_p7n6ce.png",
                     "full": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781554820/RA100109G_full_rczdrk.png",
                     "logo": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781554838/RA100109G-logo_b7q1mx.png",
                     "patch": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781554833/RA100109G-patch%D1%81_vz8hb5.png"
@@ -74,6 +82,13 @@
                 },
                 "RA100108G": {
                   "color": "Синий",
+                  "description": "RA100108G - базовая модель с капюшоном темно-синего цвета. На рукаве - полиуретановая нашивка в авиационном стиле, на груди нашивка с логотипом. На капюшоне - ярко-салатовые шнурки с металлическими наконечниками. Идеально сочетаются со штанами RA200108G.",
+                  "cross_sell": [
+                    {
+                      "text": "Штаны RA200108G",
+                      "callback_data": "show_RA200108G"
+                    }
+                  ],
                   "photos": {
                     "front": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781555115/RA100108G_front_gdbml7.png",
                     "full": "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781555125/RA100108G_full_jtiwgc.png",
@@ -85,7 +100,17 @@
               },
               "price": 16700,
               "description": "Толстовки с капюшоном — базовые модели линейки Pro Fashion. Лёгкие, функциональные, с авиационной символикой. Идеальны как в полёте, так и в городе. Идеально сочетаются со штанами серии RA2001G.",
-              "composition": "футер с начёсом, 80% хлопок, 20% полиэстер"
+              "preview_photos": [
+                "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781554832/RA100109G-front01_p7n6ce.png",
+                "https://res.cloudinary.com/dn7vdlhdj/image/upload/q_auto/f_auto/v1781555115/RA100108G_front_gdbml7.png"
+              ],
+              "composition": "Футер трехнитка, 80% хлопок, 20% полиэстер",
+              "cross_sell": [
+                {
+                  "text": "Штаны серии RA2001G",
+                  "callback_data": "item_RA2001"
+                }
+              ]
             },
             "RA1002": {
               "name": "Толстовка с подкладом",

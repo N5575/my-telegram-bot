@@ -7,7 +7,8 @@ from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
 from aiogram.types import (
     ReplyKeyboardMarkup, KeyboardButton,
-    InlineKeyboardMarkup, InlineKeyboardButton
+    InlineKeyboardMarkup, InlineKeyboardButton,
+    InputMediaPhoto
 )
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 from dotenv import load_dotenv
@@ -254,8 +255,23 @@ async def item_handler(callback):
     if not item_data:
         await callback.answer("❌ Товар не найден", show_alert=True)
         return
-    text = f"🔥 <b>{item_data['name']}</b>\n\nВыберите цвет:"
-    await callback.message.edit_text(text, reply_markup=get_variant_buttons(item_key, item_data), parse_mode="HTML")
+    text = f"🔥 <b>{item_data['name']}</b>"
+    if item_data.get('description'):
+        text += f"\n\n{item_data['description']}"
+    text += "\n\nВыберите цвет:"
+    preview_photos = item_data.get('preview_photos', [])
+    if preview_photos:
+        try:
+            await callback.message.delete()
+        except Exception:
+            pass
+        await bot.send_media_group(
+            chat_id=callback.message.chat.id,
+            media=[InputMediaPhoto(media=photo_url) for photo_url in preview_photos]
+        )
+        await callback.message.answer(text, reply_markup=get_variant_buttons(item_key, item_data), parse_mode="HTML")
+    else:
+        await callback.message.edit_text(text, reply_markup=get_variant_buttons(item_key, item_data), parse_mode="HTML")
     await callback.answer()
 
 @dp.callback_query(F.data.startswith("prints_"))
@@ -319,8 +335,9 @@ async def show_item_by_article(callback: types.CallbackQuery, article: str):
     if 'density' in item_data:
         text += f"<b>Плотность:</b> {item_data['density']}\n"
     
-    if 'description' in item_data:
-        text += f"\n{item_data['description']}\n"
+    description = variant.get('description') or item_data.get('description')
+    if description:
+        text += f"\n{description}\n"
     
     if 'price' in item_data:
         text += f"\n<b>Цена:</b> {item_data['price']:,} руб.\n"
@@ -328,9 +345,9 @@ async def show_item_by_article(callback: types.CallbackQuery, article: str):
     if print_name:
         text += f"\n<b>Принт:</b> {print_name}"
 
-    if item_data.get('cross_sell'):
-        text += "\n\n<b>С чем носить:</b>\n"
-        # Здесь позже добавим ссылки на кросс-сейл
+    cross_sell = variant.get('cross_sell') or item_data.get('cross_sell', [])
+    if cross_sell:
+        text += "\n\n<b>С чем носить:</b>"
 
     photos_data = variant.get('photos', [])
     photos = []
@@ -356,12 +373,17 @@ async def show_item_by_article(callback: types.CallbackQuery, article: str):
     # Создаём кнопки "Оставить заявку" и "Назад"
     from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
     
-    order_keyboard = InlineKeyboardMarkup(
-        inline_keyboard=[
-            [InlineKeyboardButton(text="Оставить заявку", callback_data=f"order_{article}")],
-            [InlineKeyboardButton(text="🔙 Назад", callback_data="go_back_to_colors")]
-        ]
-    )
+    keyboard_rows = []
+    for related_item in cross_sell:
+        keyboard_rows.append([
+            InlineKeyboardButton(
+                text=related_item["text"],
+                callback_data=related_item["callback_data"]
+            )
+        ])
+    keyboard_rows.append([InlineKeyboardButton(text="Оставить заявку", callback_data=f"order_{article}")])
+    keyboard_rows.append([InlineKeyboardButton(text="🔙 Назад", callback_data="go_back_to_colors")])
+    order_keyboard = InlineKeyboardMarkup(inline_keyboard=keyboard_rows)
     
     if photos:
         # Отправляем все фото БЕЗ кнопок, кроме последнего
@@ -448,7 +470,7 @@ async def order_handler(callback: types.CallbackQuery, state: FSMContext):
     else:
         subcategory = "other"
     
-    await state.update_data(article=article, subcategory=subcategory)
+    await state.update_data(article=article, subcategory=subcategory, print_name=print_name)
     
     await callback.message.answer(
         "📏 <b>Выберите размер:</b>",
@@ -546,6 +568,8 @@ async def contacts_received(message: types.Message, state: FSMContext):
     
     order_text = "🛒 <b>НОВАЯ ЗАЯВКА</b>\n\n"
     order_text += f"📦 Артикул: {data.get('article')}\n"
+    if data.get('print_name'):
+        order_text += f"🎨 Принт: {data.get('print_name')}\n"
     order_text += f"📏 Размер: {data.get('size')}\n"
     order_text += f"👤 Контакты: {data.get('contacts')}\n"
     
