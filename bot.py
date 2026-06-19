@@ -265,10 +265,13 @@ async def item_handler(callback):
             await callback.message.delete()
         except Exception:
             pass
-        await bot.send_media_group(
-            chat_id=callback.message.chat.id,
-            media=[InputMediaPhoto(media=photo_url) for photo_url in preview_photos]
-        )
+        try:
+            await bot.send_media_group(
+                chat_id=callback.message.chat.id,
+                media=[InputMediaPhoto(media=photo_url) for photo_url in preview_photos]
+            )
+        except Exception as error:
+            print(f"Preview photos failed for {item_key}: {error}")
         await callback.message.answer(text, reply_markup=get_variant_buttons(item_key, item_data), parse_mode="HTML")
     else:
         await callback.message.edit_text(text, reply_markup=get_variant_buttons(item_key, item_data), parse_mode="HTML")
