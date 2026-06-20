@@ -1,6 +1,9 @@
 import asyncio
 import os
 import json
+from urllib.parse import urlparse
+
+import aiohttp
 from aiogram import Bot, Dispatcher, F, types
 from aiogram.filters import Command, StateFilter
 from aiogram.fsm.context import FSMContext
@@ -8,7 +11,7 @@ from aiogram.fsm.state import State, StatesGroup
 from aiogram.types import (
     ReplyKeyboardMarkup, KeyboardButton,
     InlineKeyboardMarkup, InlineKeyboardButton,
-    InputMediaPhoto
+    BufferedInputFile, InputMediaPhoto
 )
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 from dotenv import load_dotenv
@@ -137,9 +140,44 @@ def telegram_photo_url(photo_url):
         .replace("/f_auto/", "/")
     )
 
+async def download_photo(photo_url):
+    timeout = aiohttp.ClientTimeout(total=30)
+    headers = {
+        "User-Agent": "Mozilla/5.0",
+        "Accept": "image/png,image/jpeg,image/webp,image/*;q=0.8,*/*;q=0.5"
+    }
+    urls = list(dict.fromkeys([telegram_photo_url(photo_url), photo_url]))
+
+    async with aiohttp.ClientSession(timeout=timeout, headers=headers) as session:
+        for url in urls:
+            try:
+                async with session.get(url, allow_redirects=True) as response:
+                    content_type = response.headers.get("Content-Type", "")
+                    if response.status != 200 or not content_type.startswith("image/"):
+                        print(
+                            f"Photo download rejected: {url} | "
+                            f"status={response.status}, type={content_type}"
+                        )
+                        continue
+
+                    photo_bytes = await response.read()
+                    if not photo_bytes:
+                        continue
+
+                    filename = os.path.basename(urlparse(url).path) or "photo.jpg"
+                    return BufferedInputFile(photo_bytes, filename=filename)
+            except Exception as error:
+                print(f"Photo download failed: {url} | {error}")
+
+    return None
+
 async def send_photo_safely(chat_id, photo_url, **kwargs):
     try:
-        await bot.send_photo(chat_id=chat_id, photo=telegram_photo_url(photo_url), **kwargs)
+        photo = await download_photo(photo_url)
+        if not photo:
+            print(f"Photo unavailable: {photo_url}")
+            return False
+        await bot.send_photo(chat_id=chat_id, photo=photo, **kwargs)
         return True
     except Exception as error:
         print(f"Photo send failed: {photo_url} | {error}")
@@ -282,9 +320,16 @@ async def item_handler(callback):
         except Exception:
             pass
         try:
+            media = []
+            for photo_url in preview_photos:
+                photo = await download_photo(photo_url)
+                if photo:
+                    media.append(InputMediaPhoto(media=photo))
+            if len(media) < 2:
+                raise RuntimeError("Could not download both preview photos")
             await bot.send_media_group(
                 chat_id=callback.message.chat.id,
-                media=[InputMediaPhoto(media=telegram_photo_url(photo_url)) for photo_url in preview_photos]
+                media=media
             )
         except Exception as error:
             print(f"Preview photos failed for {item_key}: {error}")
