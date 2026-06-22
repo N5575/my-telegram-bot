@@ -278,8 +278,12 @@ async def category_pro_fashion(callback):
 async def subcategory_handler(callback):
     subcat_key = callback.data.split("_")[1]
     subcat = catalog['categories']['pro_fashion']['subcategories'][subcat_key]
+    text = f"📦 <b>{subcat['name']}</b>"
+    if subcat.get('description'):
+        text += f"\n\n{subcat['description']}"
+    text += "\n\nВыберите товар:"
     await callback.message.edit_text(
-        f"📦 <b>{subcat['name']}</b>\n\nВыберите товар:",
+        text,
         reply_markup=get_items_list(subcat_key),
         parse_mode="HTML"
     )
@@ -289,12 +293,40 @@ async def subcategory_handler(callback):
 async def prof_item_handler(callback):
     item_key = callback.data.replace("prof_item_", "")
     item_data = catalog['categories']['professional']['items'][item_key]
-    text = f"👨‍✈️ <b>{item_data['name']}</b>\n\nВыберите цвет:"
-    await callback.message.edit_text(
-        text,
-        reply_markup=get_variant_buttons(item_key, item_data, prefix="prof_item"),
-        parse_mode="HTML"
-    )
+    text = f"👨‍✈️ <b>{item_data['name']}</b>"
+    if item_data.get('description'):
+        text += f"\n\n{item_data['description']}"
+    text += "\n\nВыберите цвет:"
+    preview_photos = item_data.get('preview_photos', [])
+    if preview_photos:
+        try:
+            await callback.message.delete()
+        except Exception:
+            pass
+        try:
+            media = []
+            for photo_url in preview_photos:
+                photo = await download_photo(photo_url)
+                if photo:
+                    media.append(InputMediaPhoto(media=photo))
+            if len(media) < 2:
+                raise RuntimeError("Could not download both preview photos")
+            await bot.send_media_group(chat_id=callback.message.chat.id, media=media)
+        except Exception as error:
+            print(f"Preview photos failed for {item_key}: {error}")
+            for photo_url in preview_photos:
+                await send_photo_safely(callback.message.chat.id, photo_url)
+        await callback.message.answer(
+            text,
+            reply_markup=get_variant_buttons(item_key, item_data, prefix="prof_item"),
+            parse_mode="HTML"
+        )
+    else:
+        await callback.message.edit_text(
+            text,
+            reply_markup=get_variant_buttons(item_key, item_data, prefix="prof_item"),
+            parse_mode="HTML"
+        )
     await callback.answer()
 
 @dp.callback_query(F.data.startswith("item_"))
